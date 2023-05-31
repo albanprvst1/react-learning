@@ -1,5 +1,4 @@
 import React from "react";
-import { View, Text } from "react-native";
 
 function NamedFunction(props) {
   return <p {...props}>Named function</p>;
@@ -8,10 +7,10 @@ function NamedFunction(props) {
 const MyComponent = ({ hero }) => {
   const { name, skill, age } = hero;
   return (
-    <View>
-      <Text>{name} is {age} years old.</Text>
-      <Text>His main skill is {skill}.</Text>
-    </View>
+    <div>
+      <p>{name} is {age} years old.</p>
+      <p>His main skill is {skill}.</p>
+    </div>
   );
 };
 
