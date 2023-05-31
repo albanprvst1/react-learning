@@ -1,11 +1,18 @@
 import React from "react";
+import { View, Text } from "react-native";
 
 function NamedFunction(props) {
   return <p {...props}>Named function</p>;
 }
 
-const ArrowFunction = (props) => {
-  return <p {...props}>Arrow function</p>;
+const MyComponent = ({ hero }) => {
+  const { name, skill, age } = hero;
+  return (
+    <View>
+      <Text>{name} is {age} years old.</Text>
+      <Text>His main skill is {skill}.</Text>
+    </View>
+  );
 };
 
 const ArrowFunctionWithImplicitReturn = (props) => (
@@ -20,11 +27,11 @@ class ClassComponent extends React.Component {
 
 export default function App() {
   return (
-    <React.Fragment>
+    <>
       <NamedFunction />
-      <ArrowFunction />
+      <MyComponent hero={{ name: "John", age: 25, skill: "programming" }} />
       <ArrowFunctionWithImplicitReturn />
       <ClassComponent />
-    </React.Fragment>
+    </>
   );
 }
